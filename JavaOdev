@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class OkulPuanlarin {
+
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        float Ex1,Ex2;
+        System.out.println(" Ogrencilerin Sayisi giriniz");
+        int sayi=input.nextInt();
+        for (int i=0;i<sayi;i++) {
+            System.out.println(i+12+". Ogrenci");
+            System.out.println("viza sinavin giriniz:");
+            Ex1 = input.nextFloat();
+            System.out.println("Final sinavin giriniz:");
+            Ex2 = input.nextFloat();
+            BasariliDurumu(Ex1, Ex2);
+        }
+
+
+    }
+
+    private static void BasariliDurumu(float ex1, float ex2) {
+        Double ort;
+        ort =(ex1 * 0.4) + (ex2 *0.6);
+        System.out.println(ort);
+        if (ort<= 100 && ort>70 )
+            System.out.println(" AA ile gecti :");
+        else if (ort<= 70 && ort>50 )
+            System.out.println(" BB ile gecti :");
+       else if (ort<= 50 && ort>35 )
+            System.out.println(" DC  sartli gecti :");
+       else
+            System.out.println (" FF kaldi ");
+
+
+    }
+}
